@@ -9,6 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name= "employee" )
+// @Table(name = "tb_employee")
 public class EmployeeModel{
 
     @Id

@@ -9,6 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "movie")
+// @Table(name = "tb_movie")
 public class MovieModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

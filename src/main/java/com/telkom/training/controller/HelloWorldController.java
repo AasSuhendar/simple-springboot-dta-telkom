@@ -1,5 +1,7 @@
 package com.telkom.training.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,17 +11,8 @@ public class HelloWorldController {
     
 
     @GetMapping("/hello")
-    public String HelloWorld() {
-        return "Hello World";
+    public ResponseEntity<String> HelloWorld() {
+        return new ResponseEntity<>("Hello", HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("/login")
-    public String Login(@RequestParam("email") String email, @RequestParam("password") String password) {
-        return email+" "+password;
-    }
-
-    // @GetMapping("/insert-employee")
-    // public String InsertEmployee(@RequestBody(String username username)){
-    //     return "Employee inserted "+username;
-    // }
 }
