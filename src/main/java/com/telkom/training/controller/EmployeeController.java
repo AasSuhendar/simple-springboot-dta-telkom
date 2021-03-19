@@ -50,7 +50,6 @@ public class EmployeeController {
 
     @GetMapping("/name/{name}")
     public ResponseEntity<APIResponse<EmployeeModel>> getEmployeeByName(@PathVariable String name){
-        // return employeeService.getEmployeeByName(name);
         ResponseEntity<APIResponse<EmployeeModel>> response;
         if (employeeService.getEmployeeByName(name).getHttpStatus().equals(HttpStatus.OK)) {
             response = new ResponseEntity<>(employeeService.getEmployeeByName(name), HttpStatus.OK);

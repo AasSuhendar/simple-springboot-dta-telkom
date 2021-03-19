@@ -9,7 +9,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "movie")
-// @Table(name = "tb_movie")
 public class MovieModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +22,18 @@ public class MovieModel {
     private String movieGenre;
 
     @Column(name = "movie_release_year")
-    private String movieReleaseYear;
+    private int movieReleaseYear;
+
+    @Column(name = "rating")
+    private int rating;
+
+    public int getRating() {
+        return this.rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
 
     public int getMovieId() {
         return this.movieId;
@@ -49,11 +59,11 @@ public class MovieModel {
         this.movieGenre = movieGenre;
     }
 
-    public String getMovieReleaseYear() {
+    public int getMovieReleaseYear() {
         return this.movieReleaseYear;
     }
 
-    public void setMovieReleaseYear(String movieReleaseYear) {
+    public void setMovieReleaseYear(int movieReleaseYear) {
         this.movieReleaseYear = movieReleaseYear;
     }
 

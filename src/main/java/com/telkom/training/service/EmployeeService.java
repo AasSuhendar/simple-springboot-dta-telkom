@@ -44,6 +44,7 @@ public class EmployeeService {
         listEmployeeResponse.setCode(HttpStatus.OK.value());
         listEmployeeResponse.setMessage(ResponseMessage.MessageSuccess);
         listEmployeeResponse.setListEmployee(employeeRepository.findAll());
+        // listEmployeeResponse.setListEmployee(employeeRepository.findAll(Sort.by(Order.asc("employeeAge"))));
         return listEmployeeResponse;
     }
 
@@ -183,7 +184,6 @@ public class EmployeeService {
             Files.copy(file.getInputStream(), this.folderUpload.resolve(file.getOriginalFilename()));
             return true;
         } catch (Exception e) {
-            //TODO: handle exception
             e.printStackTrace();
             return false;
         }
